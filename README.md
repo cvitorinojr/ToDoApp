@@ -62,4 +62,8 @@ Este projeto é uma API para gerenciamento de tarefas (ToDo) desenvolvida em ASP
 ## Observações
 
 - O banco de dados utilizado é **InMemory**, ou seja, os dados são perdidos ao reiniciar a aplicação.
+- O status utilizados para as tarefas são:
+   - 1:Pendente
+   - 2:Em Andamento
+   - 3:Concluído
 ---
