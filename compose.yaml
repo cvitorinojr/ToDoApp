@@ -1,0 +1,13 @@
+﻿version: '3.8'
+
+services:
+  todoapi:
+    container_name: todoapi
+    build:
+      context: .
+      dockerfile: ToDo-Api/Dockerfile
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    restart: unless-stopped

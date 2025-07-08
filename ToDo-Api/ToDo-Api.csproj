@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <RootNamespace>Todo-Api</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.6"/>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.8.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.8.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.8.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.8.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Controller\" />
+      <Folder Include="Extensions\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ToDo-Domain\ToDo-Domain.csproj" />
+      <ProjectReference Include="..\ToDo-Service\ToDo-Service.csproj" />
+      <ProjectReference Include="..\ToDo-Repository\ToDo-Repository.csproj" />
+    </ItemGroup>
+
+</Project>
