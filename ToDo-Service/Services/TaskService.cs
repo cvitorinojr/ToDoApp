@@ -33,6 +33,9 @@ namespace ToDo_Service.Services
 
         public async Task<IEnumerable<TaskItem>> GetAsync(string? status, DateTime? startDate, DateTime? endDate)
         {
+            if (startDate.HasValue && endDate.HasValue && endDate < startDate)
+            throw new ArgumentException("The end date cannot be earlier than the start date.");
+
             var tasks = await taskRepository.GetAsync(startDate, endDate, status);
             return tasks.Select(t => (TaskItem)t);
         }
